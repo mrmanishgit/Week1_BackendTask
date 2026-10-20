@@ -63,6 +63,7 @@ Python ,FastAPI,Git,GitHub,Swagger UI / OpenAPI,Postman,Visual Studio Code
 - GET /docs - Swagger documentation
 -GET /tasks/{task_id}-Retrieve a task by ID
 -POST /tasks -Create a new task
+
 ## Learning Outcomes
 
 Git configuration and SSH authentication.
