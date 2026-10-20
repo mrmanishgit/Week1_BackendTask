@@ -61,8 +61,8 @@ Python ,FastAPI,Git,GitHub,Swagger UI / OpenAPI,Postman,Visual Studio Code
 - GET / - Welcome message
 - GET /health - Health check
 - GET /docs - Swagger documentation
--GET /tasks/{task_id}-Retrieve a task by ID
--POST /tasks -Create a new task
+- GET /tasks/{task_id}-Retrieve a task by ID
+- POST /tasks -Create a new task
 
 ## Learning Outcomes
 
