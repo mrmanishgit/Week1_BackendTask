@@ -1,16 +1,8 @@
+## Tuesday Completion
 
-# Week 1 Backend Engineering
-
-## Overview
-A backend engineering practice project using Python and FastAPI.
-
-## Install dependencies
-python -m pip install -r requirements.txt
-
-## Run the application
-python -m uvicorn main:app --reload
-
-## API endpoints
-- GET / - Welcome message
-- GET /health - Health check
-- GET /docs - Swagger documentation
+- Created REST endpoints for listing tasks.
+- Implemented task creation using POST.
+- Implemented task retrieval by ID.
+- Added request validation with Pydantic.
+- Added 404 handling for missing tasks.
+- Tested JSON responses in Swagger UI and Postman.
