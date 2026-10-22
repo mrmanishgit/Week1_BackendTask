@@ -463,13 +463,13 @@ The automated endpoint tests currently pass: 7 passed, 0 warning.
 
 ## Current Progress
 
- ✅ Git and GitHub workflows practised.
- ✅ FastAPI REST API developed.
- ✅ PostgreSQL database integration completed.
- ✅ Task CRUD endpoints implemented.
- ✅ JWT authentication implemented.
- ✅ User-specific task access configured.
- ✅ Automated endpoint tests executed successfully.
+ - ✅ Git and GitHub workflows practised.
+ - ✅ FastAPI REST API developed.
+ - ✅ PostgreSQL database integration completed.
+ - ✅ Task CRUD endpoints implemented.
+ - ✅ JWT authentication implemented.
+ - ✅ User-specific task access configured.
+ - ✅ Automated endpoint tests executed successfully.
 
 
 
