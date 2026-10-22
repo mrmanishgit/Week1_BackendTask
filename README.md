@@ -222,6 +222,9 @@ The application runs locally at:
 ## Repository
 
 GitHub: https://github.com/mrmanishgit/Week1_BackendTask
+
+## OUTPUT
+
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fda82516-5802-47ce-806e-17dd45e4a1e5" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/506251b4-8b63-4a01-96e6-189877301045" />
 <img width="454" height="218" alt="image" src="https://github.com/user-attachments/assets/26e9a805-ee8f-4d34-87e4-5ac843177829" />
