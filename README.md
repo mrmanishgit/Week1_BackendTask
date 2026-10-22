@@ -223,6 +223,17 @@ The application runs locally at:
 
 GitHub: https://github.com/mrmanishgit/Week1_BackendTask
 
+## OUTPUT
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fda82516-5802-47ce-806e-17dd45e4a1e5" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a17e978e-5e76-4a63-8366-fdf9b7a5bf35" />
+<img width="454" height="218" alt="image" src="https://github.com/user-attachments/assets/26e9a805-ee8f-4d34-87e4-5ac843177829" />
+<img width="850" height="597" alt="image" src="https://github.com/user-attachments/assets/44797927-a1b4-4b71-b5da-492023a9818a" />
+<img width="642" height="452" alt="image" src="https://github.com/user-attachments/assets/bd063af3-08e5-41e6-89c4-5fc12338ea8f" />
+<img width="670" height="444" alt="image" src="https://github.com/user-attachments/assets/a668541b-7d27-4f01-8783-10d086c2f33f" />
+<img width="865" height="472" alt="image" src="https://github.com/user-attachments/assets/c94da4d9-d109-4cb5-82fe-3f7dfab78300" />
+<img width="842" height="412" alt="image" src="https://github.com/user-attachments/assets/6013c36e-b829-4918-be74-6baac40c23d8" />
+
 ## Day 3 Completion Status
 
 The Day 3 assignment is complete when all five CRUD endpoints have been tested successfully in Postman and the operations have been verified against the local PostgreSQL database.
