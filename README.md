@@ -226,6 +226,8 @@ GitHub: https://github.com/mrmanishgit/Week1_BackendTask
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/506251b4-8b63-4a01-96e6-189877301045" />
 <img width="454" height="218" alt="image" src="https://github.com/user-attachments/assets/26e9a805-ee8f-4d34-87e4-5ac843177829" />
 <img width="850" height="597" alt="image" src="https://github.com/user-attachments/assets/44797927-a1b4-4b71-b5da-492023a9818a" />
+<img width="642" height="452" alt="image" src="https://github.com/user-attachments/assets/bd063af3-08e5-41e6-89c4-5fc12338ea8f" />
+<img width="670" height="444" alt="image" src="https://github.com/user-attachments/assets/a668541b-7d27-4f01-8783-10d086c2f33f" />
 
 ## Day 3 Completion Status
 
