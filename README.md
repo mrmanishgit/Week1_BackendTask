@@ -457,18 +457,14 @@ The automated endpoint tests currently pass: 7 passed, 0 warning.
 
 ## Current Progress
 
-Git and GitHub workflows practised.
 
-FastAPI REST API developed.
+ - ✅ Git and GitHub workflows practised.
+ - ✅ FastAPI REST API developed.
+ - ✅ PostgreSQL database integration completed.
+ - ✅ Task CRUD endpoints implemented.
+ - ✅ JWT authentication implemented.
+ - ✅ User-specific task access configured.
+ - ✅ Automated endpoint tests executed successfully.
 
-PostgreSQL database integration completed.
 
-Task CRUD endpoints implemented.
 
-JWT authentication implemented.
-
-User-specific task access configured.
-
-Automated endpoint tests executed successfully.
-
-The project demonstrates fundamental backend engineering practices, including REST API design, database integration, layered architecture, authentication, request validation, and automated testing.
