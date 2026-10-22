@@ -291,9 +291,11 @@ Verified:
 - Task updates and deletion.
 - User-specific task access.
 - PostgreSQL task persistence.
+
 <img width="1145" height="598" alt="Screenshot 2026-10-22 164152" src="https://github.com/user-attachments/assets/148d8b8a-3a79-4497-ba1a-18856e54d3e4" />
 <img width="1332" height="658" alt="Screenshot 2026-10-22 171356" src="https://github.com/user-attachments/assets/ef3896cd-723e-449a-a58c-483e19557c05" />
 <img width="865" height="620" alt="Screenshot 2026-10-22 160559" src="https://github.com/user-attachments/assets/d44e3931-a6f1-4061-b916-a22611fa1cf1" />
+<img width="859" height="511" alt="Screenshot 2026-10-22 161025" src="https://github.com/user-attachments/assets/7a17d7c2-ac9d-45d1-be3a-bdcfc84fe375" />
 
 
 ### Learning Outcomes
