@@ -222,6 +222,8 @@ The application runs locally at:
 ## Repository
 
 GitHub: https://github.com/mrmanishgit/Week1_BackendTask
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fda82516-5802-47ce-806e-17dd45e4a1e5" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/506251b4-8b63-4a01-96e6-189877301045" />
 
 ## Day 3 Completion Status
 
