@@ -1,44 +1,75 @@
 # Week 1 — Backend Engineering Fundamentals
 
-## Overview
+## Project Overview
 
-This repository documents my Week 1 Backend Engineering training activities. The objective is to learn Git and GitHub workflows, develop backend applications using FastAPI, understand REST API design principles, connect APIs to a local PostgreSQL database, and test API requests and responses.
+This repository documents my Week 1 Backend Engineering training activities. The objective is to learn Git and GitHub workflows, develop REST APIs using FastAPI, connect backend applications to PostgreSQL, implement secure JWT authentication, organize code using a layered architecture, and test API endpoints.
+
+The project is a **JWT-Authenticated Task Management REST API** built with Python, FastAPI, PostgreSQL, SQLAlchemy, Pydantic, and Pytest.
+
+### Project Objectives
+
+- Understand Git and GitHub workflows.
+- Develop RESTful APIs using FastAPI.
+- Implement CRUD operations using PostgreSQL.
+- Apply a layered backend architecture.
+- Implement user registration and JWT authentication.
+- Restrict task access according to user ownership.
+- Write and execute endpoint tests using Pytest.
+- Test APIs using Postman and Swagger UI.
+
+---
 
 ## Day 1 — Monday: Git Setup and Backend Server
 
 ### Objectives
 
 - Configure Git and SSH authentication.
-- Clone the training repository.
+- Clone and manage the training repository.
 - Create and manage feature branches.
-- Practise committing and pushing code changes.
-- Create a Pull Request (PR).
+- Practise commits, pushes, and Pull Requests.
 - Run a local FastAPI server.
 
 ### Activities
 
 - Configured Git and GitHub SSH authentication.
-- Set up the local development environment.
-- Practised Git commands, commits, and pushing changes.
-- Created feature branches to organise development work.
-- Started a local FastAPI server.
+- Set up the local Python development environment.
+- Practised Git commands, commits, branches, and pushing changes.
+- Created feature branches to organize development work.
+- Started a local FastAPI application.
+
+### Learning Outcomes
+
+- Understood basic Git workflows.
+- Learned repository management and version control.
+- Practised running a backend application locally.
+
+---
 
 ## Day 2 — Tuesday: Branch/PR Workflow and REST API
 
 ### Objectives
 
-- Understand the Git branch and Pull Request workflow.
+- Understand branch and Pull Request workflows.
 - Practise code review and merging.
-- Develop REST API endpoints that return JSON responses.
+- Develop REST API endpoints using FastAPI.
+- Return JSON responses.
 - Test API requests and responses.
 
 ### Activities
 
-- Worked with feature branches and GitHub workflows.
+- Worked with Git branches and GitHub workflows.
 - Practised committing and pushing code changes.
 - Created FastAPI endpoints.
 - Returned JSON responses from API requests.
 - Tested endpoints using Postman and Swagger UI.
+
+### Learning Outcomes
+
+- Understood REST API fundamentals.
+- Learned how HTTP requests and JSON responses work.
+- Practised collaborative Git workflows.
+
+---
 
 ## Day 3 — Wednesday: REST API Design and PostgreSQL CRUD
 
@@ -46,19 +77,19 @@ This repository documents my Week 1 Backend Engineering training activities. The
 
 - Learn REST API design principles.
 - Understand HTTP methods and status codes.
-- Build CRUD endpoints using FastAPI.
-- Connect the backend application to a local PostgreSQL database.
-- Organise the application using a layered architecture.
-- Test API functionality using Postman.
+- Implement CRUD operations using FastAPI.
+- Connect the application to PostgreSQL.
+- Organize code using a layered architecture.
+- Validate request data and handle API errors.
 
 ### REST API Design Principles
 
-- Use resource-based URLs, such as `/tasks` and `/tasks/{task_id}`.
+- Use resource-based URLs such as `/tasks/` and `/tasks/{task_id}`.
 - Use HTTP methods according to their purpose.
 - Return appropriate HTTP status codes.
 - Validate incoming request data.
-- Handle errors with meaningful HTTP responses.
-- Separate routing, business logic, database access, and data validation.
+- Return meaningful error responses.
+- Separate routing, business logic, database access, and validation.
 
 ### HTTP Methods
 
@@ -71,7 +102,9 @@ This repository documents my Week 1 Backend Engineering training activities. The
 
 ### PostgreSQL Database
 
-Created a PostgreSQL `tasks` table to store task information.
+Created and connected a PostgreSQL database named `fastapi_tasks`.
+
+The initial task table contained the following columns:
 
 ```sql
 CREATE TABLE IF NOT EXISTS tasks (
@@ -80,22 +113,194 @@ CREATE TABLE IF NOT EXISTS tasks (
     completed BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-SELECT * FROM tasks;
+SELECT * FROM tasks ORDER BY id ASC;
 ```
+
+The database schema was subsequently extended to support task ownership, status, priority, descriptions, deadlines, and timestamps.
 
 ### CRUD API Endpoints
 
-| Method | Endpoint           | Description             | Expected Status |
-| ------ | ------------------ | ----------------------- | --------------- |
-| POST   | `/tasks`           | Create a new task       | 201 Created     |
-| GET    | `/tasks`           | Retrieve all tasks      | 200 OK          |
-| GET    | `/tasks/{task_id}` | Retrieve a task by ID   | 200 OK          |
-| PUT    | `/tasks/{task_id}` | Update an existing task | 200 OK          |
-| DELETE | `/tasks/{task_id}` | Delete a task           | 204 No Content  |
+| Method | Endpoint           | Description                       | Expected Status |
+| ------ | ------------------ | --------------------------------- | --------------- |
+| POST   | `/tasks/`          | Create a task                     | 201 Created     |
+| GET    | `/tasks/`          | Retrieve the current user's tasks | 200 OK          |
+| GET    | `/tasks/{task_id}` | Retrieve a task by ID             | 200 OK          |
+| PUT    | `/tasks/{task_id}` | Update a task                     | 200 OK          |
+| DELETE | `/tasks/{task_id}` | Delete a task                     | 200 OK          |
 
-Additional responses include `404 Not Found` when a requested task does not exist and `422 Unprocessable Entity` when request data fails validation.
+Additional responses include:
 
-### Project Structure
+- `401 Unauthorized` — Missing or invalid authentication.
+- `404 Not Found` — Task not found or not accessible to the current user.
+- `409 Conflict` — Duplicate username or email.
+- `422 Unprocessable Entity` — Invalid request data.
+
+The DELETE endpoint returns a JSON success message with `200 OK`.
+
+### Layered Architecture
+
+- **Main application:** Initializes FastAPI and registers routers.
+- **Database layer:** Configures the PostgreSQL connection and database sessions.
+- **Models:** Define database table structures.
+- **Schemas:** Validate incoming requests and format responses.
+- **Repositories:** Handle database operations.
+- **Services:** Implement business logic.
+- **Routers:** Define API endpoints and HTTP methods.
+
+### Learning Outcomes
+
+- Implemented task CRUD operations.
+- Connected FastAPI to PostgreSQL.
+- Used SQLAlchemy for database access.
+- Applied Pydantic validation.
+- Organized the application into separate layers.
+- Tested CRUD operations using Postman and Swagger UI.
+
+---
+
+## Day 4 — Thursday: JWT Authentication and Endpoint Testing
+
+### Objectives
+
+- Understand authentication using JSON Web Tokens (JWT).
+- Implement user registration and login.
+- Secure API endpoints.
+- Restrict task access based on user ownership.
+- Add task status, priority, deadline, and timestamps.
+- Write and run automated endpoint tests using Pytest.
+
+### User Authentication
+
+Implemented user registration and login endpoints.
+
+| Method | Endpoint         | Description                               |
+| ------ | ---------------- | ----------------------------------------- |
+| POST   | `/auth/register` | Register a new user                       |
+| POST   | `/auth/login`    | Authenticate a user and issue a JWT       |
+| GET    | `/auth/me`       | Retrieve the authenticated user's details |
+
+Passwords are hashed before storage. Login returns an access token that is used to authenticate protected requests.
+
+### JWT Authentication Workflow
+
+1. A user registers with a username, email, and password.
+2. The application securely hashes the password and stores the user.
+3. The user logs in with their credentials.
+4. The API returns a JWT access token.
+5. The client sends the token in the `Authorization` header.
+6. The API validates the token before processing protected requests.
+7. The authenticated user's ID is used to restrict access to their tasks.
+
+Example authorization header:
+
+```text
+Authorization: Bearer <access_token>
+```
+
+The configured access token lifetime is 30 minutes.
+
+### User-Specific Task Management
+
+Implemented user ownership for task operations.
+
+Each task is associated with a user through the `user_id` foreign key.
+
+The task repository filters task retrieval by the authenticated user's ID. This ensures that users can view, update, and delete only their own tasks.
+
+### Task Database Fields
+
+| Column         | Purpose                                    |
+| -------------- | ------------------------------------------ |
+| `id`           | Unique task identifier                     |
+| `title`        | Task title                                 |
+| `description`  | Detailed task description                  |
+| `completed`    | Completion flag retained for compatibility |
+| `status`       | Task status                                |
+| `priority`     | Task priority                              |
+| `due_date`     | Task deadline                              |
+| `user_id`      | Task owner                                 |
+| `created_at`   | Creation timestamp                         |
+| `updated_at`   | Last update timestamp                      |
+| `completed_at` | Completion timestamp                       |
+
+Supported task statuses:
+
+- `PENDING`
+- `IN_PROGRESS`
+- `COMPLETED`
+
+Supported priorities:
+
+- `LOW`
+- `MEDIUM`
+- `HIGH`
+- `URGENT`
+
+### User Database Fields
+
+| Column            | Purpose                    |
+| ----------------- | -------------------------- |
+| `id`              | Unique user identifier     |
+| `username`        | Unique username            |
+| `email`           | Unique email address       |
+| `hashed_password` | Secure password hash       |
+| `role`            | User role                  |
+| `is_active`       | Account activation status  |
+| `created_at`      | Account creation timestamp |
+| `updated_at`      | Last update timestamp      |
+
+### Endpoint Testing with Pytest
+
+Created `tests/test_api.py` to verify endpoint behavior.
+
+The tests cover:
+
+- Root endpoint response.
+- Health endpoint response.
+- Authentication requirements for task endpoints.
+- Protection of GET, POST, PUT, and DELETE task operations.
+
+### Test Execution
+
+Command:
+
+```powershell
+python -m pytest tests/test_api.py -v
+```
+
+Verified test results:
+
+```text
+7 passed, 0 warning
+```
+
+All seven tests passed successfully. One deprecation warning was reported by the installed testing dependencies.
+
+### Manual API Verification
+
+Tested authentication and task CRUD operations using Swagger UI and Postman.
+
+Verified:
+
+- User registration and login.
+- JWT-protected endpoints.
+- Task creation and retrieval.
+- Task updates and deletion.
+- User-specific task access.
+- PostgreSQL task persistence.
+
+### Learning Outcomes
+
+- Implemented JWT-based authentication.
+- Learned password hashing and token validation.
+- Protected task endpoints.
+- Applied user-specific data access.
+- Added automated endpoint tests.
+- Practised API testing and error handling.
+
+---
+
+## Project Structure
 
 ```text
 Week1 Task/
@@ -107,38 +312,39 @@ Week1 Task/
 │   │   └── database.py
 │   ├── models/
 │   │   ├── __init__.py
-│   │   └── task.py
+│   │   ├── task.py
+│   │   └── user.py
 │   ├── schemas/
 │   │   ├── __init__.py
-│   │   └── task_schema.py
+│   │   ├── task_schema.py
+│   │   └── user_schema.py
 │   ├── repositories/
 │   │   ├── __init__.py
-│   │   └── task_repository.py
+│   │   ├── task_repository.py
+│   │   └── user_repository.py
 │   ├── services/
 │   │   ├── __init__.py
-│   │   └── task_service.py
+│   │   ├── task_service.py
+│   │   └── auth_service.py
+│   ├── security/
+│   │   ├── __init__.py
+│   │   └── jwt.py
 │   └── routers/
 │       ├── __init__.py
-│       └── task_router.py
+│       ├── task_router.py
+│       └── auth_router.py
 ├── tests/
+│   ├── __init__.py
+│   └── test_api.py
 ├── .env
 ├── .gitignore
 ├── requirements.txt
-├── README.md
-└── .venv/
+└── README.md
 ```
 
-**Note:** The `tests/` directory is optional unless you have created it. The `.env` file contains local configuration and should not be committed to GitHub.
+The `.env` file contains local configuration and secrets. The `.venv/` directory contains the local Python environment. Both should be excluded from Git using `.gitignore`.
 
-### Application Architecture
-
-- **Main application:** Initialises FastAPI and registers routers.
-- **Database layer:** Configures the PostgreSQL connection and database sessions.
-- **Models:** Define the database table structure.
-- **Schemas:** Validate incoming requests and format API responses.
-- **Repositories:** Handle database CRUD operations.
-- **Services:** Implement business logic and error handling.
-- **Routers:** Define API endpoints and HTTP methods.
+---
 
 ## Repository Setup
 
@@ -149,15 +355,13 @@ git clone git@github.com:mrmanishgit/Week1_BackendTask.git
 cd Week1_BackendTask
 ```
 
-### Create and Activate a Virtual Environment
-
-If you have not already created one:
+### Create a Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-On Windows PowerShell:
+### Activate the Virtual Environment on Windows PowerShell
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
@@ -165,23 +369,25 @@ On Windows PowerShell:
 
 ### Install Dependencies
 
-```bash
+```powershell
 python -m pip install -r requirements.txt
 ```
 
 ### Run the Application
 
-For the current `src/` project structure:
-
-```bash
+```powershell
 python -m uvicorn src.main:app --reload
 ```
 
 The application runs locally at:
 
 - API base URL: http://127.0.0.1:8000
-- Interactive API documentation: http://127.0.0.1:8000/docs
+- Swagger UI: http://127.0.0.1:8000/docs
+- ReDoc: http://127.0.0.1:8000/redoc
+- Health endpoint: http://127.0.0.1:8000/health
 - OpenAPI schema: http://127.0.0.1:8000/openapi.json
+
+---
 
 ## Technologies Used
 
@@ -191,49 +397,68 @@ The application runs locally at:
 - SQLAlchemy
 - Pydantic
 - Uvicorn
-- Git
-- GitHub
-- Swagger UI / OpenAPI
+- PyJWT
+- pwdlib with Argon2 password hashing
+- Pytest
+- HTTPX / FastAPI TestClient
+- Git and GitHub
 - Postman
+- Swagger UI / OpenAPI
 - Visual Studio Code
+
+---
 
 ## Testing and Verification
 
-- Tested API endpoints using Postman.
-- Verified request and response JSON.
-- Tested task creation, retrieval, updating, and deletion.
-- Checked request validation and HTTP error responses.
-- Verified that task data is saved in PostgreSQL.
-- Checked that stored records remain available after restarting the application.
+The application has been tested using Postman, Swagger UI, and Pytest.
 
-## Learning Outcomes
+Testing activities include:
 
-- Configured Git and SSH authentication.
-- Learned repository management, feature branching, commits, and pushes.
-- Practised Pull Requests and code review workflows.
-- Developed and ran a local FastAPI application.
-- Understood REST API design principles and HTTP methods.
-- Implemented CRUD endpoints connected to PostgreSQL.
-- Applied a layered architecture to backend development.
-- Used SQLAlchemy for database interaction and Pydantic for data validation.
-- Tested API requests and responses using Postman.
-- Practised HTTP status-code handling and error management.
+- Checking API response status codes.
+- Verifying JSON request and response bodies.
+- Testing task CRUD operations.
+- Verifying user registration and login.
+- Checking protected endpoint behavior.
+- Testing user-specific task access.
+- Validating request data.
+- Running automated endpoint tests.
+
+Automated test command:
+
+```powershell
+python -m pytest tests/test_api.py -v
+```
+
+Latest recorded test result: **7 passed, 1 warning**.
+
+---
 
 ## Repository
 
 GitHub: https://github.com/mrmanishgit/Week1_BackendTask
 
-## OUTPUT
+---
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fda82516-5802-47ce-806e-17dd45e4a1e5" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a17e978e-5e76-4a63-8366-fdf9b7a5bf35" />
-<img width="454" height="218" alt="image" src="https://github.com/user-attachments/assets/26e9a805-ee8f-4d34-87e4-5ac843177829" />
-<img width="850" height="597" alt="image" src="https://github.com/user-attachments/assets/44797927-a1b4-4b71-b5da-492023a9818a" />
-<img width="642" height="452" alt="image" src="https://github.com/user-attachments/assets/bd063af3-08e5-41e6-89c4-5fc12338ea8f" />
-<img width="670" height="444" alt="image" src="https://github.com/user-attachments/assets/a668541b-7d27-4f01-8783-10d086c2f33f" />
-<img width="865" height="472" alt="image" src="https://github.com/user-attachments/assets/c94da4d9-d109-4cb5-82fe-3f7dfab78300" />
-<img width="842" height="412" alt="image" src="https://github.com/user-attachments/assets/6013c36e-b829-4918-be74-6baac40c23d8" />
+## Day 4 Progress Summary
 
-## Day 3 Completion Status
+During Day 4, I implemented JWT authentication, user-specific task access, and automated endpoint tests using FastAPI and Pytest. I verified the authentication and task CRUD endpoints using Swagger UI and Postman.
 
-The Day 3 assignment is complete when all five CRUD endpoints have been tested successfully in Postman and the operations have been verified against the local PostgreSQL database.
+The automated endpoint tests currently pass: 7 passed, 0 warning.
+
+## Current Progress
+
+Git and GitHub workflows practised.
+
+FastAPI REST API developed.
+
+PostgreSQL database integration completed.
+
+Task CRUD endpoints implemented.
+
+JWT authentication implemented.
+
+User-specific task access configured.
+
+Automated endpoint tests executed successfully.
+
+The project demonstrates fundamental backend engineering practices, including REST API design, database integration, layered architecture, authentication, request validation, and automated testing.
