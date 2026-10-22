@@ -226,7 +226,7 @@ GitHub: https://github.com/mrmanishgit/Week1_BackendTask
 ## OUTPUT
 
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/fda82516-5802-47ce-806e-17dd45e4a1e5" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/506251b4-8b63-4a01-96e6-189877301045" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/a17e978e-5e76-4a63-8366-fdf9b7a5bf35" />
 <img width="454" height="218" alt="image" src="https://github.com/user-attachments/assets/26e9a805-ee8f-4d34-87e4-5ac843177829" />
 <img width="850" height="597" alt="image" src="https://github.com/user-attachments/assets/44797927-a1b4-4b71-b5da-492023a9818a" />
 <img width="642" height="452" alt="image" src="https://github.com/user-attachments/assets/bd063af3-08e5-41e6-89c4-5fc12338ea8f" />
