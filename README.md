@@ -458,11 +458,6 @@ The automated endpoint tests currently pass: 7 passed, 0 warning.
 ## Current Progress
 
 
-## Current Progress
-
-
-## Current Progress
-
  - ✅ Git and GitHub workflows practised.
  - ✅ FastAPI REST API developed.
  - ✅ PostgreSQL database integration completed.
