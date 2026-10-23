@@ -44,7 +44,6 @@ The project is a **JWT-Authenticated Task Management REST API** built with Pytho
 - Practised running a backend application locally.
 
 ---
-
 ## Day 2 — Tuesday: Branch/PR Workflow and REST API
 
 ### Objectives
