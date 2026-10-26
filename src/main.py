@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from src.database.database import Base, engine
+from src.database.database import Base, engine 
 from src.models import task, user
 from src.routers.auth_router import router as auth_router
 from src.routers.task_router import router as task_router
@@ -14,6 +14,8 @@ async def lifespan(app: FastAPI):
     # Creates missing tables; does not migrate existing tables.
     Base.metadata.create_all(bind=engine)
     yield
+
+
 
 
 app = FastAPI(

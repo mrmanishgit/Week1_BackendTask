@@ -44,6 +44,7 @@ The project is a **JWT-Authenticated Task Management REST API** built with Pytho
 - Practised running a backend application locally.
 
 ---
+
 ## Day 2 — Tuesday: Branch/PR Workflow and REST API
 
 ### Objectives
@@ -274,6 +275,7 @@ Verified test results:
 ```text
 7 passed, 0 warning
 ```
+
 <img width="817" height="291" alt="Screenshot 2026-10-22 164940" src="https://github.com/user-attachments/assets/0f6c44bd-189e-4993-89a5-6ab036e78685" />
 
 All seven tests passed successfully. One deprecation warning was reported by the installed testing dependencies.
@@ -296,7 +298,6 @@ Verified:
 <img width="865" height="620" alt="Screenshot 2026-10-22 160559" src="https://github.com/user-attachments/assets/d44e3931-a6f1-4061-b916-a22611fa1cf1" />
 <img width="859" height="511" alt="Screenshot 2026-10-22 161025" src="https://github.com/user-attachments/assets/7a17d7c2-ac9d-45d1-be3a-bdcfc84fe375" />
 
-
 ### Learning Outcomes
 
 - Implemented JWT-based authentication.
@@ -307,6 +308,7 @@ Verified:
 - Practised API testing and error handling.
 
 ---
+
 <img width="805" height="341" alt="Screenshot 2026-10-22 162847" src="https://github.com/user-attachments/assets/ab93b737-0e2a-4c19-8d3a-d34080508198" />
 
 ## Project Structure
@@ -456,14 +458,10 @@ The automated endpoint tests currently pass: 7 passed, 0 warning.
 
 ## Current Progress
 
-
- - ✅ Git and GitHub workflows practised.
- - ✅ FastAPI REST API developed.
- - ✅ PostgreSQL database integration completed.
- - ✅ Task CRUD endpoints implemented.
- - ✅ JWT authentication implemented.
- - ✅ User-specific task access configured.
- - ✅ Automated endpoint tests executed successfully.
-
-
-
+- ✅ Git and GitHub workflows practised.
+- ✅ FastAPI REST API developed.
+- ✅ PostgreSQL database integration completed.
+- ✅ Task CRUD endpoints implemented.
+- ✅ JWT authentication implemented.
+- ✅ User-specific task access configured.
+- ✅ Automated endpoint tests executed successfully.
